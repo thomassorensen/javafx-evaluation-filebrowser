@@ -12,7 +12,7 @@ import org.junit.platform.launcher.core.LauncherFactory;
 import org.junit.platform.launcher.listeners.SummaryGeneratingListener;
 import org.junit.platform.launcher.listeners.TestExecutionSummary;
 
-public class RunJUnit5TestsFromJava {
+public class RunJUnit5 {
 	SummaryGeneratingListener listener = new SummaryGeneratingListener();
 
 	public void runOne() {
@@ -29,7 +29,7 @@ public class RunJUnit5TestsFromJava {
 	}
 
 	public static void main(String[] args) {
-		RunJUnit5TestsFromJava testRunner = new RunJUnit5TestsFromJava();
+		RunJUnit5 testRunner = new RunJUnit5();
 		testRunner.runOne();
 
 		TestExecutionSummary summary = testRunner.listener.getSummary();
