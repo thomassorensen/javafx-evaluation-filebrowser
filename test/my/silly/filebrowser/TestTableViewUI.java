@@ -5,8 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.io.IOException;
 import java.util.Set;
 
+import org.junit.internal.TextListener;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.runner.JUnitCore;
 import org.testfx.api.FxAssert;
 import org.testfx.api.FxRobot;
 import org.testfx.assertions.api.Assertions;
@@ -28,15 +30,15 @@ import javafx.stage.Stage;
 import my.silly.filebrowser.data.Item;
 
 @ExtendWith(ApplicationExtension.class)
-class TestTableViewUI {
+public class TestTableViewUI {
 
 	@Start
-	private void start(Stage primaryStage) throws IOException {
+	public void start(Stage primaryStage) throws IOException {
 		new Main().start(primaryStage);
 	}
 
 	@Test
-	void initial_state(FxRobot robot) {
+	public void initial_state(FxRobot robot) {
 		FxAssert.verifyThat(CSS.INFO_LABEL, LabeledMatchers.hasText("dc"));
 		FxAssert.verifyThat(CSS.BREADCRUMB_LABEL, LabeledMatchers.hasText("\\"));
 		FxAssert.verifyThat(CSS.BTN_MOVE_UP_ONE_LEVEL, LabeledMatchers.hasText("↑"));
@@ -208,4 +210,10 @@ class TestTableViewUI {
 		FxAssert.verifyThat(CSS.BREADCRUMB_LABEL, LabeledMatchers.hasText(breadcrb));
 	}
 
+	public static void main(String[] args) {
+		JUnitCore junit = new JUnitCore();
+		junit.addListener(new TextListener(System.out));
+		junit.run(TestTableViewUI.class);
+	}
+	
 }
