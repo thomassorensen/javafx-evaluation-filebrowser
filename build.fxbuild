@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <anttasks:AntTask xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:anttasks="http://org.eclipse.fx.ide.jdt/1.0" buildDirectory="${project}/build">
   <deploy height="400" placeholderref="sdf" placeholderid="sdf" width="600" packagingFormat="exe">
-    <application name="test-javafx" mainclass="my.silly.filebrowser.Main" version="1.0" toolkit="fx"/>
+    <application name="javafx-evaluation-filebrowser" mainclass="my.silly.filebrowser.Main" version="1.0" toolkit="fx"/>
     <info title="My silly filebrowser" vendor="Tom"/>
   </deploy>
   <signjar/>

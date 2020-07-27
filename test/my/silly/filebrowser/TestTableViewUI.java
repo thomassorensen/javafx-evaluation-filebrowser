@@ -151,9 +151,9 @@ class TestTableViewUI {
 
 	@Test
 	void add_folder(FxRobot robot) {
-		robot.clickOn(CSS.FILE_MENU_ITEM).moveTo(CSS.NEW_MENU).moveTo(CSS.NEW_FILE_MENU_ITEM).clickOn(CSS.NEW_FOLDER_MENU_ITEM).write("hello");
+		robot.clickOn(CSS.FILE_MENU_ITEM).moveTo(CSS.NEW_MENU).moveTo(CSS.NEW_FILE_MENU_ITEM).clickOn(CSS.NEW_FOLDER_MENU_ITEM).write("hello").type(KeyCode.ENTER).sleep(1000);
 		TableView<Item> tableView = robot.lookup(CSS.TABLEVIEW).queryTableView();
-		assertRow(robot, tableView, 3, "New Folder", "\\New Folder", "Folder");
+		assertRow(robot, tableView, 3, "helloNew Folder", "\\helloNew Folder", "Folder");
 	}
 
 	@Test

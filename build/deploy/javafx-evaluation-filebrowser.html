@@ -1,0 +1,43 @@
+<html><head>
+  <SCRIPT src="http://java.com/js/dtjava.js"></SCRIPT>
+<script>
+    function launchApplication(jnlpfile) {
+        dtjava.launch(            {
+                url : 'javafx-evaluation-filebrowser.jnlp'
+            },
+            {
+                javafx : '8.0+'
+            },
+            {}
+        );
+        return false;
+    }
+</script>
+
+<script>
+    function javafxEmbedfxApplication() {
+        dtjava.embed(
+            {
+                id : 'fxApplication',
+                url : 'javafx-evaluation-filebrowser.jnlp',
+                placeholder : 'sdf',
+                width : '600',
+                height : '400'
+            },
+            {
+                javafx : '8.0+'
+            },
+            {}
+        );
+    }
+    <!-- Embed FX application into web page once page is loaded -->
+    dtjava.addOnloadCallback(javafxEmbedfxApplication);
+</script>
+
+</head><body>
+<h2>Test page for <b>My silly filebrowser</b></h2>
+  <b>Webstart:</b> <a href='javafx-evaluation-filebrowser.jnlp' onclick="return launchApplication('javafx-evaluation-filebrowser.jnlp');">click to launch this app as webstart</a><br><hr><br>
+
+  <!-- Applet will be inserted here -->
+  <div id='sdf'></div>
+</body></html>
